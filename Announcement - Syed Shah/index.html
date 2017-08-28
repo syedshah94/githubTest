@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<style type="text/css">
+
+	body{
+		margin: 0;
+		width: 80%;
+		position: relative;
+		left: 10%;
+		top: 2%;
+		background-image: url("background.jpg");
+		background-size: cover;
+	}
+
+	/*Button stuff*/
+	button {
+	  display: inline-block;
+	  margin: 0 10px 0 0;
+	  padding: 10px 30px;
+	  font-size: 40px;
+	  font-family: "Bitter",serif;
+	  line-height: 1.8;
+	  appearance: none;
+	  box-shadow: none;
+	  border-radius: 0;
+
+	  position: relative;
+	  top: 10px;
+	  right: -80px;
+	}
+
+	button:focus {
+	  outline: none
+	}
+
+	section.press button {
+	  color: #fff;
+	  background-color: #6496c8;
+	  border: none;
+	  border-radius: 15px;
+	  box-shadow: 0 10px #27496d;
+	}
+
+	section.press button:hover,
+	section.press button.hover {
+	  background-color: #417cb8
+	}
+
+	section.press button:active,
+	section.press button.active {
+	  background-color: #417cb8;
+	  box-shadow: 0 5px #27496d;
+	  transform: translateY(5px);
+	}
+
+	button a{
+		color:inherit;
+  		text-decoration: none;
+	}
+	/*End of Button stuff*/
+	
+
+	.introImg img{
+		width: 89%;
+		height: 80%;
+
+		/*Reposition image to center*/
+		display: block;
+		margin: auto;
+		position: relative;
+		right: -2%;
+		bottom: -200px;
+		border-radius: 20px;
+
+	}
+
+	/*Information about page goes here*/
+	.about {
+		color: white;
+		position: relative;
+		font-size: 55pt;
+		text-align: center;
+		position: relative;
+		bottom: -100px
+	}
+
+	body .page{
+		position: relative;
+		bottom: -200px
+	}
+
+	#newsHandle {
+	}
+
+	#news {
+		position: relative;
+		bottom: -150px;
+		color: white;
+		text-align: center;
+		font-size: 40pt;
+	}
+
+
+	.newsInfo{
+		position: relative;
+		bottom: -300px;
+		color: white;
+		font-size: 30pt;
+	}
+
+	.title {
+		text-decoration: underline;
+	}
+
+	.paragraph {
+		color: white;
+		position: relative;
+		font-size: 20pt;
+	}
+
+	footer {
+		color: white;
+		position: relative;
+		bottom: -600px;
+		text-align: center;
+	}
+
+
+	</style>
+</head>
+<body>
+	<!--Menu-->
+
+	<section class="press">
+	    <button><a href="index.html">Home</a></button>
+	    <button><a href="contestants.html">Contestants</a></button>
+	    <button><a href="episodes.html">Episodes</a></button>
+	    <button><a href="http://www.adultswim.com/videos/rick-and-morty/">Rick and Morty</a></button>
+	</section>
+
+	
+	<!--End of menu-->
+
+	<div class="about" class="page">SHOW ME WHAT YOU GOT</div>
+	<div class="introImg" class="page"><img src="planet_music.png"></a></div>
+
+
+	<div id="newsHandle" class="page">
+		<div id="news">NEWS</div>
+		<div class="newsInfo">
+			<div class=title>Earth: UPDATE</div>
+			<p id="p1" class="paragraph">Welcome fellow Cromulons! Today we have interfered with Earth's gravity and spawned several global disasters in the process. When we exclaimed, "SHOW ME WHAT YOU GOT", Earthlings (Rick Sanchez and his grandson, Morty Smith) have agreed to serve a live performance of a catchy new song. As always, participation is involuntary. Failure to cooperation will result in the destruction of their planet.</p>
+
+
+			<div class=title>Greebybobes: DISQUALIFIED</div>
+			<p id="p2" class="paragraph">Greebybobes claim "If you love music, then set our worlds free!" Due to a refusal to cooperate, they have been DISQUALIFIED and voting has been disabled for the planet. There's one every season.</p>
+		</div>
+	</div>
+		
+
+
+
+</body>
+
+<footer>Website built by Syed W Shah</footer>
+</html>

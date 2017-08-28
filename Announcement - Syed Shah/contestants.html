@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contest/Voting Page</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<style type="text/css">
+
+	body{
+		margin: 0;
+		width: 80%;
+		position: relative;
+		left: 10%;
+		top: 2%;
+		background: url(background.jpg);	
+		background-size: 100% 300%;
+	}
+
+	/*Button stuff*/
+	button {
+	  display: inline-block;
+	  margin: 0 10px 0 0;
+	  padding: 10px 30px;
+	  font-size: 40px;
+	  font-family: "Bitter",serif;
+	  line-height: 1.8;
+	  appearance: none;
+	  box-shadow: none;
+	  border-radius: 0;
+
+	  position: relative;
+	  top: 10px;
+	  right: -80px;
+	}
+
+	button:focus {
+	  outline: none
+	}
+
+	section.press button {
+	  color: #fff;
+	  background-color: #6496c8;
+	  border: none;
+	  border-radius: 15px;
+	  box-shadow: 0 10px #27496d;
+	}
+
+	section.press button:hover,
+	section.press button.hover {
+	  background-color: #417cb8
+	}
+
+	section.press button:active,
+	section.press button.active {
+	  background-color: #417cb8;
+	  box-shadow: 0 5px #27496d;
+	  transform: translateY(5px);
+	}
+
+	button a{
+		color:inherit;
+  		text-decoration: none;
+	}
+	/*End of Button stuff*/
+	
+
+
+	/*Information about page goes here*/
+	#contestants{
+		position: relative;
+		bottom: -60px;
+		color: white;
+		width: 80%;
+		right: -27%;
+		font-size: 20pt;
+	}
+/*
+	@keyframes modal {
+		from {right:0px;}
+		to {
+			right: 200px;
+	}
+
+	#greebyImg:hover {
+		position: relative;
+		animation: modal 2s;
+
+		transition-delay: 4s;
+*/
+	#greebyImg {
+		background-image: url("greebybobes.png");
+		background-size: cover;
+		width: 50%;
+		height: 200px;
+		border-radius: 20px;
+		z-index: 1;
+	}
+
+
+	}
+
+	#arboImg {
+		background-image: url("arbo.png");
+		background-size: cover;
+		width: 50%;
+		height: 200px;
+		border-radius: 20px;
+	}
+
+	#scrotImg {
+		background-image: url("scrotians.png");
+		background-size: cover;
+		width: 50%;
+		height: 200px;
+		border-radius: 20px;
+	}
+
+	#larvImg {
+		background-image: url("larv.png");
+		background-size: cover;
+		width: 50%;
+		height: 200px;
+		border-radius: 20px;
+	}
+
+	#earthImg {
+		background-image: url("earth.png");
+		background-size: cover;
+		width: 50%;
+		height: 200px;
+		border-radius: 20px;
+	}
+	/*End of contestant info*/
+
+
+
+	/*Start of modal stuff*/
+	.modalDialog {
+		position: fixed;
+		font-family: Arial, Helvetica, sans-serif;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0,0,0,0.8);
+		z-index: 99999;
+		opacity:0;
+		-webkit-transition: opacity 400ms ease-in;
+		-moz-transition: opacity 400ms ease-in;
+		transition: opacity 400ms ease-in;
+		pointer-events: none;
+	}
+
+	.modalDialog:target {
+		opacity:1;
+		pointer-events: auto;
+	}
+
+	.modalDialog > div {
+		width: 400px;
+		position: relative;
+		margin: 10% auto;
+		padding: 5px 20px 13px 20px;
+		border-radius: 10px;
+		background: #fff;
+		background: -moz-linear-gradient(#fff, #999);
+		background: -webkit-linear-gradient(#fff, #999);
+		background: -o-linear-gradient(#fff, #999);
+	}
+
+	.close {
+		background: #606061;
+		color: #FFFFFF;
+		line-height: 25px;
+		position: absolute;
+		right: -12px;
+		text-align: center;
+		top: -10px;
+		width: 24px;
+		text-decoration: none;
+		font-weight: bold;
+		-webkit-border-radius: 12px;
+		-moz-border-radius: 12px;
+		border-radius: 12px;
+		-moz-box-shadow: 1px 1px 3px #000;
+		-webkit-box-shadow: 1px 1px 3px #000;
+		box-shadow: 1px 1px 3px #000;
+	}
+
+	.close:hover { background: #00d9ff; }
+
+	#contestants {
+		text-decoration: none;
+	}
+
+	/*End of modal stuff */
+
+
+	footer {
+		color: white;
+		position: relative;
+		bottom: -600px;
+		text-align: center;
+	}
+
+
+
+	</style>
+</head>
+<body>
+	<!--Menu-->
+	<section class="press">
+	    <button><a href="index.html">Home</a></button>
+	    <button><a href="contestants.html">Contestants</a></button>
+	    <button><a href="episodes.html">Episodes</a></button>
+	    <button><a href="http://www.adultswim.com/videos/rick-and-morty/">Rick and Morty</a></button>
+	</section>
+
+	
+	<!--End of menu-->
+
+
+	<div id="contestants">
+		<div class="about" class="page"><a href="#openModal" id="vote">Click To Vote Now</a></div>
+
+		<div id="greeby" >
+			<div id="greebyImg"></div>
+		</div>
+
+		<div id="arbo">
+			<div id="arboImg"></div>
+		</div>
+
+		<div id="scrot">
+			<div id="scrotImg"></div>
+		</div>
+
+		<div id="larv">
+			<div id="larvImg"></div>
+		</div>
+
+		<div id="earth">
+			<div id="earthImg"></div>
+		</div>
+
+	</div>	
+
+
+
+	<a href="#openModal" id="vote">Vote</a>
+
+	<div id="openModal" class="modalDialog">
+		<div>
+			<a href="#close" title="Close" class="close">X</a>
+			<h2>Voting Box</h2>
+			<form>
+				<input type="radio" name="male">
+				Arbolian Mentirososians  <br>
+				<input type="radio" name="female">
+				Scrotians <br>
+				<input type="radio" name="female">
+				Larva Aliens <br>
+				<input type="radio" name="female">
+				Earthlings <br>
+			</form>
+			<p>Thanks for participating!</p>
+		</div>
+	</div>
+
+
+</body>
+
+<footer></footer>
+<!--Potential script
+<script>
+    $( document ).ready(function() {
+		$('#greebyImg').click(function() {
+    		//if($(this).css("margin-right") == "200px")
+    		//{
+        		$('#greebyImg').animate({"right": '-=200'});
+    		//}
+    	});
+    });
+</script>
+-->
+</html>

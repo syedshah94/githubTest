@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contest/Episodes</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<style type="text/css">
+
+	body{
+		margin: 0;
+		width: 80%;
+		position: relative;
+		left: 10%;
+		top: 2%;
+		background: url(background.jpg);
+		background-size: 100% 300%;	
+	}
+
+	/*Button stuff*/
+	button {
+	  display: inline-block;
+	  margin: 0 10px 0 0;
+	  padding: 10px 30px;
+	  font-size: 40px;
+	  font-family: "Bitter",serif;
+	  line-height: 1.8;
+	  appearance: none;
+	  box-shadow: none;
+	  border-radius: 0;
+
+	  position: relative;
+	  top: 10px;
+	  right: -80px;
+	}
+
+	button:focus {
+	  outline: none
+	}
+
+	section.press button {
+	  color: #fff;
+	  background-color: #6496c8;
+	  border: none;
+	  border-radius: 15px;
+	  box-shadow: 0 10px #27496d;
+	}
+
+	section.press button:hover,
+	section.press button.hover {
+	  background-color: #417cb8
+	}
+
+	section.press button:active,
+	section.press button.active {
+	  background-color: #417cb8;
+	  box-shadow: 0 5px #27496d;
+	  transform: translateY(5px);
+	}
+
+	button a{
+		color:inherit;
+  		text-decoration: none;
+	}
+	/*End of Button stuff*/
+	
+
+	.videos {
+		position: relative;
+		text-align: center;
+		bottom: -50px;
+
+		text-align: center;
+	}
+
+	
+
+	footer {
+		color: white;
+		position: relative;
+	}
+
+
+
+	</style>
+</head>
+<body>
+	<!--Menu-->
+	<section class="press">
+	    <button><a href="index.html">Home</a></button>
+	    <button><a href="contestants.html">Contestants</a></button>
+	    <button><a href="episodes.html">Episodes</a></button>
+	    <button><a href="http://www.adultswim.com/videos/rick-and-morty/">Rick and Morty</a></button>
+	</section>
+
+	
+	<!--End of menu-->
+
+	<div class="videos">
+		<div id="video1">
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/CNYemYxN9CA">
+			</iframe>
+
+		</div>
+		<br>
+
+		<div id="video2">
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/9oOATRG0hCw">
+			</iframe>
+
+		</div>
+		<br>
+
+		<div id="video3">
+			<iframe width="420" height="315"
+			src="https://www.youtube.com/embed/m1fZ7Ap6ebs">
+			</iframe>
+
+		</div>
+		<br>
+	</div>
+
+
+
+
+
+</body>
+
+<footer></footer>
+<!--Potential script
+<script>
+    $( document ).ready(function() {
+		$('#greebyImg').click(function() {
+    		//if($(this).css("margin-right") == "200px")
+    		//{
+        		$('#greebyImg').animate({"right": '-=200'});
+    		//}
+    	});
+    });
+</script>
+-->
+</html>
