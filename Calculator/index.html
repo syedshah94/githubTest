@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<title>Calculator</title>
+	<style type="text/css">
+
+	/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+		/*REMOVE ALL FORMATTING*/
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+
+
+
+
+
+
+
+/* STYLES START BELOW*/
+	
+		body {
+			background: #A7DBD9;
+
+		}
+		.box {
+			position: relative;
+			margin: auto;
+			display: block;
+			margin-top: 10%;
+			text-align: center;
+			width: 600px;
+			height: 420px;
+		}
+		#display {
+			background: #E0E4CD;
+			width: 400px;
+			height: 60px;
+			position: relative;
+			right: -95px;
+			top:-50px;
+			border-radius: 20px;
+			margin: 0px 0 10px 0;
+			color: orange;
+			font-size: 60px;
+			text-align: center;
+
+			overflow:hidden;
+		}
+
+		.display-border{
+			padding-top:10px;
+			height: 20px;
+			width:20px;
+		}
+
+		/*Button stuff*/
+
+		button {
+
+		  display: inline-block;
+		  margin: 0 0px 20px 0;
+		  padding: 5px 15px;
+		  font-size: 38px;
+		  font-family: "Bitter",serif;
+		  appearance: none;
+		  box-shadow: none;
+		  border-radius: 0;
+		}
+
+		button:focus {
+		  outline: none
+		}
+
+
+
+		section.flat button {
+		  color: #fff;
+		  background-color: #6496c8;
+		  text-shadow: -1px 1px #417cb8;
+		  border: none;
+		}
+
+		section.flat button:hover,
+		section.flat button.hover {
+		  background-color: #346392;
+		  text-shadow: -1px 1px #27496d;
+		}
+
+		section.flat button:active,
+		section.flat button.active {
+		  background-color: #27496d;
+		  text-shadow: -1px 1px #193047;
+		}
+
+
+		section.border button {
+		  color: #6496c8;
+		  background: rgba(0,0,0,0);
+		  border: solid 5px #6496c8;
+		}
+		section.border button:hover,
+		section.border button.hover {
+		  border-color: #346392;
+		  color: #346392;
+		}
+		section.border button:active,
+		section.border button.active {
+		  border-color: #27496d;
+		  color: #27496d;
+		}
+		
+
+
+		section.gradient button {
+		  color: #fff;
+		  text-shadow: -2px 2px #346392;
+		  background-color: #ff9664;
+		  background-image: linear-gradient(top, #6496c8, #346392);
+		  box-shadow: inset 0 0 0 1px #27496d;
+		  border: none;
+		  border-radius: 15px;
+		}
+
+		section.gradient button:hover,
+		section.gradient button.hover {
+		  box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+		}
+
+		section.gradient button:active,
+		section.gradient button.active {
+		  box-shadow: inset 0 0 0 1px #27496d,inset 0 5px 30px #193047;
+		}
+
+
+
+		section.press button {
+		  color: #fff;
+		  background-color: #6496c8;
+		  border: none;
+		  border-radius: 15px;
+		  box-shadow: 0 10px #27496d;
+		}
+
+		section.press button:hover,
+		section.press button.hover {
+		  background-color: #417cb8
+		}
+
+		section.press button:active,
+		section.press button.active {
+		  background-color: #417cb8;
+		  box-shadow: 0 5px #27496d;
+		  transform: translateY(5px);
+		}
+		/*End of Button stuff*/
+
+
+		/*Start of Robot Design*/
+
+		.body{
+			background: rgba(0,176,164,.5);
+			width: 600px;
+			height: 850px;
+			border-radius: 40px;
+			border-bottom-left-radius: 40px;
+			margin: 0 auto;
+			box-shadow: inset 0px 0px 40px 40px rgba(0,176,164,.5) ;
+		}
+
+		.bodyDrop{
+			background: rgba(0,176,164,.5);
+			width: 200px;
+			height: 860px;
+			border-radius: 80px 0 0 40px;
+			border-bottom-left-radius: 180px;
+
+			position: absolute;
+			z-index: -1;
+			left: 300px;
+			top: -10px;
+			box-shadow: inset 0px 0px 40px 40px rgba(0,176,164,.5) ;
+		}
+
+		.faceBox {
+			background: #E0E4CD;
+			width: 500px;
+			height: 380px;
+			border-radius: 40px;
+			text-align: center;
+
+			position: relative;
+			right: -10%;
+			bottom: -15px;
+			z-index: 2;
+		}
+
+		.pupilLeft {
+			background: rgba(0,195,182,.8);
+			height: 100px;
+			width:100px;
+			border-radius: 50%;
+
+			position: relative;
+			right: -75%;
+			bottom: -30%;
+		}
+
+		#left1 {
+			background: #fff;
+			border-radius: 50%;
+			width: 30px;
+			height: 30px;
+			
+			position: relative;
+			right: -50%;
+			bottom: -20px;
+
+		}
+		#left2 {
+			background: #fff;
+			border-radius: 50%;
+			width: 15px;
+			height: 15px;
+
+			position: relative;
+			right: -70%;
+			bottom: -20px;
+		}
+
+		.pupilRight {
+			background: rgba(0,195,182,.8);
+			height: 100px;
+			width:100px;
+			border-radius: 50%;
+
+			position: relative;
+			right: -8%;
+			bottom: -5%;
+		}
+		#right1 {
+			background: #fff;
+			border-radius: 50%;
+			width: 30px;
+			height: 30px;
+
+			position: relative;
+			right: -50%;
+			bottom: -20px;
+		}
+		#right2{
+			background: #fff;
+			border-radius: 50%;
+			width: 15px;
+			height: 15px;
+
+			position: relative;
+			right: -70%;
+			bottom: -20px;
+		}
+
+		.mouth {
+		  background-color: rgba(0,195,182,.8);
+		  width: 300px;
+		  height: 100px;
+		  border-radius: 0 0 200px 200px;
+		  position: relative;
+		  right: -20%;
+		  bottom: -10%;
+		}
+
+		.tongue {
+			background: rgba(112, 228, 205, 1);
+			height: 70px;
+			width: 140px;
+			border-radius: 50% 50% 50% 50%;
+
+			position: relative;
+			right: -35px;
+			bottom: -30px;
+
+			
+		}
+
+		/*Functions and divs*/
+		
+	</style>
+</head>
+<body>
+	
+		<!-- Robot Body -->
+		<div class = "body">
+			<!-- Robot 3D Effect -->
+			<div class = "bodyDrop"></div>
+
+			<!-- Robot face -->
+			<div class="faceBox">
+				<!--Pupil-->
+				<div class="pupilLeft">
+					<!-- make some shine/sparkle -->
+					<div id="left1"></div>
+					<div id="left2"></div>
+				</div>
+
+				<!--Pupil-->
+				<div class="pupilRight">
+					<!-- make some shine/sparkle -->
+					<div id="right1"></div>
+					<div id="right2"></div>
+				</div>
+
+				<!-- Smiley Face -->
+				<!-- <div class="smile"></div> -->
+
+				<!-- Mouth -->
+				<div class = "mouth">
+					<div class="tongue"></div>
+				</div>
+				<!-- Blush -->
+
+			</div>
+
+			<!-- Calculator Box -->
+			<div class="box">
+				<!-- output line -->
+				<div class="display-border">
+					<div id="display"></div>
+				</div>
+
+				<div class="arith">
+					<!-- Numbers/Operators -->
+					<section class="press">
+					<button class="numbers" id="seven" onclick='num(this)'>7</button>
+					<button class="numbers" id="eight" onclick='num(this)'>8</button>
+					<button class="numbers" id="nine" onclick='num(this)'>9</button>
+					<button class="operators" id="divide" onclick='num(this)'>/</button>
+					<br>
+
+					<button class="numbers" id="four" onclick='num(this)'>4</button>
+					<button class="numbers" id="five" onclick='num(this)'>5</button>
+					<button class="numbers" id="six" onclick='num(this)'>6</button>
+					<button class="numbers" id="multiply" onclick='num(this)'>*</button>
+					<br>
+
+					<button class="numbers" id="one" onclick='num(this)'>1</button>
+					<button class="numbers" id="two" onclick='num(this)'>2</button>
+					<button class="numbers" id="three" onclick='num(this)'>3</button>
+					<button class="numbers" id="subtract" onclick='num(this)'>-</button>
+					<br>
+
+					<button class="numbers" id="zero" onclick='num(this)'>0</button>
+					<button class="numbers" id="decimal" onclick='num(this)'>.</button>
+					<button class="numbers" id="add" onclick='num(this)'>+</button>
+					<button class="numbers" id="equals" onclick='equals(this)'>=</button>
+					<br>
+
+					<!-- special buttons / outputs -->
+					<button id="clear" onclick='empty()'>CE</button>
+					<button id="average" onclick="avg()">Average</button>
+					<button id="comma" onclick="num(this)">,</button>
+					</section>
+				</div>
+			</div>
+		</div>
+
+	<script type="text/javascript">
+		var expression='';
+		var result;
+		var avgArr = new Array();
+		var newArr = new Array();
+
+		var sum = 0;
+
+		function num(object) {
+			expression += object.innerHTML;
+			document.getElementById('display').innerHTML=expression;
+			
+		}
+
+		function equals() {
+			result = eval(document.getElementById('display').innerHTML);
+			document.getElementById('display').innerHTML = result;
+		}
+
+		function empty() {
+			expression = '';
+			result = 0;
+			document.getElementById('display').innerHTML = '';
+		}
+
+		function avg() {
+			avgArr = document.getElementById('display').innerHTML;
+			avgArr = avgArr.split(',');
+
+			// Need to convert array of string to array of integers:
+			for (let val in avgArr) { //will not work with var val (unless you reset to zero)
+		   		newArr[val] = parseInt(avgArr[val], 10);
+			}
+
+			for(let i = 0; i < newArr.length; i++){
+				sum += newArr[i];
+			}
+			// console.log(sum/newArr.length);
+			document.getElementById('display').innerHTML = (sum/newArr.length);
+			sum = 0; //Need to reset sum.
+		}
+	</script>
+
+
+</body>
+</html>
