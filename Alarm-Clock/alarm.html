@@ -5,11 +5,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<style type="text/css">
 		* {
-			color: white;
+			color: black;
 			font-family: 'Lato', sans-serif;
 		}
 		body {
-			background: rgba(100,100,100,.9);
+			background: url("https://wallpapercave.com/wp/U7uriGx.gif");
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+
 			
 		}
 		#clockDisplay {
@@ -19,34 +22,45 @@
 			transform: translateX(-50%) translateY(-50%);
 			font-size: 100pt;
 			padding: 0 5px 0 5px;
-			border: 10px solid white;
+			border: 20px solid white;
 			border-radius: 30px;
 		}
 
 		#setAlarm {
 			position: absolute;
-			top: 50%;
-			left: 40%;
+			top: 45%;
+			left: 38%;
 			font-size: 40pt;
-			background: rgba(255,0,0,1);
+			background: rgba(200,100,100,.2);
+			border: 5px solid white;
+			border-radius: 20px;
+			padding: 0 30px 0 30px;
 		}
 
 		#alarm {
 			position: absolute;
 			top: 60%;
-			left: 30%;
+			left: 35%;
+			width: 30%;
 			font-size: 36pt;
-			background: black;
-
+			background: rgba(200,100,100,.2);
+			border-radius: 20px;
 		}
 
+		#nando {
+			position: absolute;
+			top:70%;
+		}
 
 	</style>
 </head>
 <body>
 	<div id="clockDisplay"></div>
-	<div id="nando"></div>
-	
+	<div id="nando">
+		<img style="display:none;" id="headPic" src="headPic" />
+		<img style="display:none;" id="jawPic" src="jawPic" />
+	</div>
+
 	<button id="setAlarm" onclick="setAlarm()">Set Alarm</button>
 
 	<input type="text" id="alarm">
@@ -85,6 +99,8 @@
 				console.log("it worked!");
 				audio.play();
 				document.getElementById('setAlarm').innerHTML = "Set Alarm";
+				showHeadPicture();
+				showJawPicture();
 			}
 			else {
 				console.log('failed');
@@ -96,6 +112,21 @@
 			}
 			
 		}
+
+		function showHeadPicture() {
+		  var sourceOfPicture = "face.png";
+		  var img = document.getElementById('headPic')
+		  img.src = sourceOfPicture.replace('90x90', '225x225');
+		  img.style.display = "block";
+		} 
+
+		function showJawPicture() {
+		  var sourceOfPicture = "jaw.png";
+		  var img = document.getElementById('jawPic')
+		  img.src = sourceOfPicture.replace('90x90', '225x225');
+		  img.style.display = "block";
+		} 
+
 
 		currentTime(); //call to run currentTime()
 		//I didn't call setInterval() here since there will be a 1s delay upon page load.
