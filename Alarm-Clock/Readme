@@ -1,0 +1,6 @@
+To use alarm clock, please enter an alarm time in hh-mm-ss format.
+For example: 23:10:10
+Then click "Set Alarm"
+
+You may cancel the alarm once it's running. But do not spam clicks, or it will not work properly due to input delays 
+and how the setAlarm() is written.
