@@ -1,0 +1,107 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title>Alarm/NandoClock</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<style type="text/css">
+		* {
+			color: white;
+			font-family: 'Lato', sans-serif;
+		}
+		body {
+			background: rgba(100,100,100,.9);
+			
+		}
+		#clockDisplay {
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			font-size: 100pt;
+			padding: 0 5px 0 5px;
+			border: 10px solid white;
+			border-radius: 30px;
+		}
+
+		#setAlarm {
+			position: absolute;
+			top: 50%;
+			left: 40%;
+			font-size: 40pt;
+			background: rgba(255,0,0,1);
+		}
+
+		#alarm {
+			position: absolute;
+			top: 60%;
+			left: 30%;
+			font-size: 36pt;
+			background: black;
+
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="clockDisplay"></div>
+	<div id="nando"></div>
+	
+	<button id="setAlarm" onclick="setAlarm()">Set Alarm</button>
+
+	<input type="text" id="alarm">
+	
+
+	<script type="text/javascript">   
+
+		var audio = new Audio();
+		audio.src = "audio.3gpp";
+		var setAlarmButton = document.getElementById('setAlarm');
+
+		function currentTime() {
+			date = new Date();
+			
+			//Date object returns a 24 hour clock, and we care about zero-spacing
+			//so to take care of indexing:
+
+			//These were specifically made global, to be used in setAlarm()
+		 	hour = (date.getHours()<10?'0':'') + date.getHours(); 
+		    min = (date.getMinutes()<10?'0':'') + date.getMinutes();
+		    sec = (date.getSeconds()<10?'0':'') + date.getSeconds();
+			displayTime = hour + ':' + min + ':' + sec;
+			document.getElementById('clockDisplay').innerHTML = displayTime;
+
+			setInterval(currentTime, 1000); //Call this to avoid a 1s delay.
+
+		}
+
+		function setAlarm() {
+			console.log('alarm is ' + document.getElementById('alarm').value);
+			console.log('displayTime is ' + displayTime);
+
+			if ((displayTime == document.getElementById('alarm').value) && 
+				(document.getElementById('setAlarm').innerHTML == "Stop Alarm"))
+			{
+				console.log("it worked!");
+				audio.play();
+				document.getElementById('setAlarm').innerHTML = "Set Alarm";
+			}
+			else {
+				console.log('failed');
+				document.getElementById('setAlarm').innerHTML = "Stop Alarm";
+				document.getElementById('setAlarm').onclick = function () {
+					document.getElementById('setAlarm').innerHTML = "Set Alarm";
+				}
+			setInterval(setAlarm, 1000); //call this to keep checking
+			}
+			
+		}
+
+		currentTime(); //call to run currentTime()
+		//I didn't call setInterval() here since there will be a 1s delay upon page load.
+		//Instead, I called setInterval() within currentTime()	
+
+	</script>
+</body>
+</html>
+
