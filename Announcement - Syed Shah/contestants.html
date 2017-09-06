@@ -301,9 +301,8 @@
 	let current = 0;
 	function slideShow(){
 	    let i = 0;
-	    while(i < slides.length){
+	    for(i = 0; i < slides.length; i++){
 	        slides[i].style.display = "none";
-	        i++;
 	    }
 	    current++;
 	    if (current > slides.length) 
