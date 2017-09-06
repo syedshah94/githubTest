@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Contest/Voting Page</title>
-	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<style type="text/css">
 
 	body{
@@ -69,8 +69,6 @@
 		position: relative;
 		bottom: -60px;
 		color: white;
-		width: 80%;
-		right: -27%;
 		font-size: 20pt;
 	}
 /*
@@ -88,45 +86,56 @@
 */
 	#greebyImg {
 		background-image: url("greebybobes.png");
-		background-size: cover;
-		width: 50%;
-		height: 200px;
+		background: cover;
+		background-size: contain;
+		width: 100%;
+		height: 600px;
 		border-radius: 20px;
-		z-index: 1;
-	}
-
-
 	}
 
 	#arboImg {
 		background-image: url("arbo.png");
-		background-size: cover;
-		width: 50%;
-		height: 200px;
+		background: cover;
+		background-size: contain;
+		width: 100%;
+		height: 600px;
 		border-radius: 20px;
 	}
 
 	#scrotImg {
 		background-image: url("scrotians.png");
-		background-size: cover;
-		width: 50%;
-		height: 200px;
+		background: cover;
+		background-size: contain;
+		width: 100%;
+		height: 600px;
 		border-radius: 20px;
 	}
 
 	#larvImg {
 		background-image: url("larv.png");
-		background-size: cover;
-		width: 50%;
-		height: 200px;
+		background: cover;
+		background-size: contain;
+		width: 100%;
+		height: 600px;
 		border-radius: 20px;
 	}
 
 	#earthImg {
 		background-image: url("earth.png");
-		background-size: cover;
-		width: 50%;
-		height: 200px;
+		background: cover;
+		width: 100%;
+		height: 600px;
+		border-radius: 20px;
+	}
+
+	#logoImg {
+		background-image: url("planet_music.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background: cover;
+
+		width: 100%;
+		height: 600px;
 		border-radius: 20px;
 	}
 	/*End of contestant info*/
@@ -222,31 +231,35 @@
 	<div id="contestants">
 		<div class="about" class="page"><a href="#openModal" id="vote">Click To Vote Now</a></div>
 
-		<div id="greeby" >
+		<div id="greeby" class="mySlides">
+			<div id="logoImg"></div>
+		</div>
+
+		<div id="greeby" class="mySlides">
 			<div id="greebyImg"></div>
 		</div>
 
 		<div id="arbo">
-			<div id="arboImg"></div>
+			<div id="arboImg" class="mySlides"></div>
 		</div>
 
 		<div id="scrot">
-			<div id="scrotImg"></div>
+			<div id="scrotImg" class="mySlides"></div>
 		</div>
 
 		<div id="larv">
-			<div id="larvImg"></div>
+			<div id="larvImg" class="mySlides"></div>
 		</div>
 
 		<div id="earth">
-			<div id="earthImg"></div>
+			<div id="earthImg" class="mySlides"></div>
 		</div>
 
 	</div>	
 
 
 
-	<a href="#openModal" id="vote">Vote</a>
+	<a href="#openModal" id="vote"></a>
 
 	<div id="openModal" class="modalDialog">
 		<div>
@@ -266,6 +279,45 @@
 		</div>
 	</div>
 
+<script type="text/javascript">
+	// var slideIndex = 0;
+	// var i = 0;
+
+	// function showDivs() {
+	// 	var  x = document.getElementsByClassName("mySlides");
+	// 	if (slideIndex > x.length) {slideIndex = 1;}
+	// 	if (slideIndex < 1) {mySlides = x.length;}
+	// 	while (i < x.length) {
+	// 		x[i].style.display = "none";
+	// 		i++;
+	// 	}
+	// 	x[slideIndex-1].style.display = "block";
+	// 	slideIndex++;
+	// 	setInterval(showDivs, 1000);
+	// }
+
+
+	let slides = $(".mySlides");
+	let current = 0;
+	function slideShow(){
+	    let i = 0;
+	    while(i < slides.length){
+	        slides[i].style.display = "none";
+	        i++;
+	    }
+	    current++;
+	    if (current > slides.length) 
+	    {
+	        current = 1;
+	    }
+	    slides[current-1].style.display = "block";
+	   setTimeout(slideShow, 1500);
+	}
+
+	slideShow();
+	
+	
+</script>
 
 </body>
 
