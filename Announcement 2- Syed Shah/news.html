@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>News</title>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<style type="text/css">
+
+	body{
+		margin: 0;
+		width: 80%;
+		position: relative;
+		left: 10%;
+		top: 2%;
+		background-image: url("https://i.pinimg.com/736x/83/c3/d5/83c3d5fc08331a160f875105a60bfc2e--free-icon-pattern-background.jpg");
+		background-size: cover;
+	}
+
+	/*Button stuff*/
+	button {
+	  display: inline-block;
+	  margin: 0 10px 0 0;
+	  padding: 10px 30px;
+	  font-size: 40px;
+	  font-family: "Bitter",serif;
+	  line-height: 1.8;
+	  appearance: none;
+	  box-shadow: none;
+	  border-radius: 0;
+
+	  position: relative;
+	  top: 10px;
+	  right: -80px;
+	}
+
+	button:focus {
+	  outline: none
+	}
+
+	section.press button {
+	  color: #fff;
+	  background-color: #6496c8;
+	  border: none;
+	  border-radius: 15px;
+	  box-shadow: 0 10px #27496d;
+	}
+
+	section.press button:hover,
+	section.press button.hover {
+	  background-color: #417cb8
+	}
+
+	section.press button:active,
+	section.press button.active {
+	  background-color: #417cb8;
+	  box-shadow: 0 5px #27496d;
+	  transform: translateY(5px);
+	}
+
+	button a{
+		color:inherit;
+  		text-decoration: none;
+	}
+	/*End of Button stuff*/
+	
+
+	#newsHandle {
+	}
+
+	#news {
+		position: relative;
+		bottom: -50px;
+		color: white;
+		text-align: center;
+		font-size: 60pt;
+		text-shadow:
+	    -1px -1px 0 #ccc,
+	    1px -1px 0 #ccc,
+	    -1px 1px 0 #ccc,
+	    1px 1px 0 #ccc; 
+		}
+
+
+	.newsInfo{
+		position: relative;
+		bottom: -120px;
+		color: white;
+		font-size: 30pt;
+		
+	}
+
+	.title {
+		text-decoration: underline;
+	}
+
+	.paragraph {
+		color: white;
+		position: relative;
+		font-size: 20pt;
+	}
+	footer {
+		color: white;
+		position: relative;
+	}
+
+	</style>
+</head>
+<body>
+	<!--Menu-->
+	<section class="press">
+	    <button><a href="index.html">Home</a></button>
+	    <button><a href="slideShow.html">Slide Show</a></button>
+	    <button><a href="news.html">News</a></button>
+	    <button><a href="https://vr.google.com/">Other Sources</a></button>
+	</section>
+
+	
+	<!--End of menu-->
+	<div id="newsHandle" class="page">
+		<div id="news">NEWS</div>
+		<div class="newsInfo">
+			<div class=title>Google invites you to 'step inside' your favorite songs with VR</div>
+			<p id="p1" class="paragraph">The interactive experiment is inspired by the way the Song Exploder podcast invites artists to dissect their most famous songs and explain to listeners how each instrument comes together to create the final product.
+			<br>
+			Called Inside Music, the project gives users the freedom to step inside a song and take it apart for themselves. When you start up a song, you’re taken into a three dimensional space where each of the song’s individual components such as vocals, guitar, synths and piano will surround you. </p>
+
+			<div class=title>VR For Good: How The Virtual Medicine Conference Wants To Better VR Healthcare</div>
+			<p id="p1" class="paragraph">TSimply saying that VR is good for healthcare is too broad a statement. As well all know, there are thousands of different strands of subjects that fall under that umbrella, and identifying which ones VR is well-suited for is a little trickier. But an upcoming conference aims to unify these various strands, providing a VR medical conference that charts the future of technology’s impact on the health sector.<br>
+
+			Virtual Medicine, as the event is called, is organized by Dr. Brennan Spiegel, the Director of Health Services Research for Cedars-Sinai Health System, and Co-Chair of the VR/AR Association Digital Health Committee. Taking place from March 28th – 29th 2018 at the Cedars-Sinai Medical Center in Los Angeles, the event gathers various leaders from the world of medical VR for two days of talks, sessions, and workshops.<br>
+
+			19 speakers have been lined up so far from groups like the USC Institute for Creative Technologies, Osso Health, Children’s Hospital LA and even Samsung. In fact, Samsung is a partner for the event as are the VR/AR Association and AppliedVR, a VR platform designed for healthcare.</p>
+
+
+			<div class=title>How To (Legally) Start A VR Arcade</div>
+			<p id="p2" class="paragraph">With the growth of VR over the past 16 months, we’ve also seen the growth of VR arcades. Places where people can go, pay some cash, and rent a VR headset for set amount of time and play a library of games — hearkening back decades to the arcades of old. They’re still young and growing, but there is promise for VR arcades.
+			<br>
+			So, if you’re the type of person who wants to jump in on the VR arcade ownership action, this is a quick run down for you. Developers! Read this too, as there are things you should be doing as well! It will not cover what types of games to put in your arcade — that is for you, the arcade owner, to decide. This will however, go over things that you may not know, or things that you should absolutely do if you’re an arcade owner and want to properly use games with your arcade.</p>
+		</div>
+	</div>
+</body>
+<footer></footer>
+</html>
