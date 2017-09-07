@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BatNando</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="animate.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+	<style type="text/css">
+		body {
+			background-image: url("batmanbg.gif");
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: absolute;
+			margin: 0 auto;
+		}
+		#noFreeAds {
+			background: black;
+			width: 1500px;
+			height: 80px;
+			position: relative;
+			bottom: -725px;
+		}
+		#noFreeAds2 {
+			background: black;
+			width: 1500px;
+			height: 80px;
+			position: relative;
+			top: -100px;
+		}
+		#nando {
+			text-align: center;
+			position: relative;
+			left: 100%;
+		}
+		#nando #face{
+			position: absolute;
+			left: 42%;
+		}
+		#nando #jaw{
+			position: absolute;
+			left: 9%;
+			top: 98%;
+		}
+		#nando #subs {
+			color: white;
+			font-size: 140pt;
+			font-family: 'Open Sans', sans-serif;
+			position: relative;
+			bottom: -300px;
+			width: 100%;
+		}
+		
+	</style>
+
+</head>
+<body>
+	<div id="noFreeAds"></div>
+	<div id="noFreeAds2"></div>
+	<div id="nando">
+		<div id="face"><img src="face.png" class="animated bounce infinite" width="237" height="237"/>
+			<div id="jaw"><img src="jaw.png" width="176" height="69"/></div>
+		</div>	
+	<div id="subs">99% of the time!</div>
+	</div>
+
+	<script type="text/javascript">
+	var audio1 = new Audio();
+	audio1.src = "audio.3gpp";
+
+	var audio2 = new Audio();
+	audio2.src = "transition.mp3";
+	$(document).ready(function() {
+		$('#nando').animate({"left" : "-100%" }, 3500);
+		audio2.play();
+		setTimeout(function() { audio1.play(); }, 800)
+		},
+    );
+
+
+	</script>
+</body>
+</html>
