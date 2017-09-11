@@ -129,7 +129,6 @@ section #fillCounter {
 #topbar, #sidebar{
 	position: fixed;
 	top: 0;
-
 }
 
 /*=========================================================================*/
@@ -141,7 +140,7 @@ section #fillCounter {
 	font-family: "Yantramanav", sans-serif; 
 	font-size: 50px;
 	font-weight: bold;
-	padding: 120px 0px 0px 0px;
+	padding: 150px 0px 0px 0px;
 
 }
 .intro #pageTagline{
@@ -160,70 +159,39 @@ section #fillCounter {
 
 /*------------------Template page Copy n' paste ends here (from home.css)-------------*/
 
-
-
-.intro #homeImage #textInHomeImage{
-	color: white;
+.productDetails{
+	text-align: center;
 	font-family: "Yantramanav", sans-serif; 
-	width: 35%;
-	position: relative;
-	top: 30%;
-	left: 2%;
-}
-
-.intro #homeImage #textInHomeImage #text1{
 	font-size: 50px;
-	font-weight: bold; 
+	margin-top: 150px;
 }
 
-.intro #homeImage #textInHomeImage #text2{
-	font-size: 30px;
+.productDetails #productTitle{
+	padding-bottom: 20px;
+	font-size: 50px;
 }
 
-.twoColumns{
-	display: inline-block;
+.productDetails p{
+	width: 65%;
+	position: relative;
+	left: 20%;
+	font-size: 28px;
 }
 
-.productSection #productLeft{
-	background: url(http://dl36mmdz94630.cloudfront.net/uploads/assets/images/000/007/158/large/Portal_Gun.137.jpg?1388772938);
+.productDetails #productVideo{
+	padding-top: 125px;
+}
+
+.productDetails #indexImage{
+	background: url(https://memestatic.fjcdn.com/pictures/Portal_7c61f5_6201427.jpg);
 	background-size: cover;
-	height: 400px;
-	width: 638px;
+	background-repeat: no-repeat;
+	margin-top: 40px;
+	position: relative;
+	left: 21%;
+	height: 450px;
+	width: 800px;
+	border: black solid 2px;
 }
 
-.productSection #productRight{
-	background: url(http://cdn.collider.com/wp-content/uploads/2016/02/futurama-slurm-poster.jpg);
-	background-size: cover;
-	height: 400px;
-	width: 638px;
-}
-
-.productSection #productLeft2{
-	background: url(https://img04.deviantart.net/5e23/i/2014/041/a/5/skyrim_skooma_wallapaper_by_askskullyy-d75wnzz.png);
-	background-size: cover;
-	height: 400px;
-	width: 638px;
-}
-
-.productSection #productRight2{
-	background: url(https://images4.sw-cdn.net/product/picture/710x528_12858382_7799140_1479998099.jpg);
-	background-size: cover;
-	height: 400px;
-	width: 638px;
-}
-
-.explore {
-	font-family: "Yantramanav", sans-serif;
-	font-size:24px;
-	display: inline-block;
-	margin: 10px 250px;
-	padding: 5px 5px;
-	background: rgba(0,0,255,.5);
-	border-radius: 10px;
-	border-width: 1px blue
-}
-.explore a{
-	text-decoration: none;
-	color: white;
-}
 
