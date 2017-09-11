@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>METAfiction Portal Gun</title>
+	<link rel="stylesheet" type="text/css" href="template.css">
+	<!-- Font awesome library-->
+	<!-- <link href="css/font-awesome.min.css" rel="stylesheet" /> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#sidebarButton').click(function(){
+				$('#sidebar').toggleClass('visible');
+			});
+		});
+
+	</script>
+
+</head>
+<body>	
+	<section id="sidebar">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Shop</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact Me</a></li>
+			<li><a href="#">Concept Log</a></li>
+			<li><a href="#">Locations</a></li>
+		</ul>
+
+		<div id="sidebarButton">
+		<span></span>
+		<span></span>
+		<span></span>
+		</div>
+	</section>
+
+	<section id="topbar">
+		<div id="logo" class="topbar">METAfiction</div>
+		<div id="cart" class="topbar">Cart</div>
+		<div id="cartCounter" class="topbar"><div id="fillCounter"></div>0</div>
+	</section>	
+	<hr>
+
+	<section class="intro">
+		<div id="pageTitle">Portal Gun</div>
+		<br>
+		<div id="homeImage"></div>
+	</section>
+
+	<style type="text/css">
+		.intro #homeImage{
+		background: url(http://dl36mmdz94630.cloudfront.net/uploads/assets/images/000/007/158/large/Portal_Gun.137.jpg?1388772938);
+		background-size: cover;
+		height: 600px;
+		width: 1280px;
+		margin: auto;
+		}
+	</style>
+
+</body>
+<!-- Add footer if there's time (in footer place FB,Twttr,LkdIn,Email handles) -->
+<!-- Place Contact info -->
+</html>
